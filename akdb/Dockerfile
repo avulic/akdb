@@ -1,5 +1,5 @@
 #ubuntu image
-FROM ubuntu
+FROM ubuntu:18.04
 
 #install required files
 RUN apt-get update -y
