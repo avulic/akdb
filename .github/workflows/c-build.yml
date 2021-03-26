@@ -3,7 +3,11 @@ name: C CI
 on:
   push:
     branches: [ devops ]
-
+    
+defaults:
+  run:
+    working-directory: akdb/akdb/
+    
 jobs:
   build:
     runs-on: ubuntu-latest
