@@ -1,12 +1,8 @@
-name: C CI
+name: compile_and_test
 
 on:
   push:
     branches: [ devops ]
-    
-defaults:
-  run:
-    working-directory: ./akdb/src
     
 jobs:
   build:
@@ -14,7 +10,14 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: make
+    - name: compile
       run: make
-    - name: make doc
+      working-directory: ./akdb/src
+      
+    - name: run all tests
+      run: ./akdb | ./akdb alltest
+      working-directory: ./akdb/bin
+      
+    - name: compile doc 
       run: make doc
+      working-directory: ./akdb/doc
