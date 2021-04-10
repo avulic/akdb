@@ -14,10 +14,21 @@ jobs:
       run: make
       working-directory: ./akdb/src
       
-    - name: run all tests
-      run: ./akdb | ./akdb alltest
-      working-directory: ./akdb/bin
+    #- name: run all tests
+    #  run: ./akdb | ./akdb alltest
+    #  working-directory: ./akdb/bin
       
     - name: compile doc 
       run: make doc
-      working-directory: ./akdb/doc
+      working-directory: ./akdb/bin
+          
+    - name: Push Wiki Changes
+      uses: Andrew-Chen-Wang/github-wiki-action@v2
+      env:
+        # Make sure you have that / at the end. We use rsync 
+        # WIKI_DIR's default is wiki/
+        WIKI_DIR: ./akdb/doc/html/
+        GH_TOKEN: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
+        GH_MAIL: ${{ secrets.YOUR_EMAIL }}
+        GH_NAME: ${{ github.repository_owner }}
+        EXCLUDED_FILES: "a/ b.md"
