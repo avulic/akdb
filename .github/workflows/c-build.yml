@@ -42,4 +42,10 @@ jobs:
         GH_TOKEN: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
         GH_MAIL: ${{ secrets.YOUR_EMAIL }}
         GH_NAME: ${{ github.repository_owner }}
-        EXCLUDED_FILES: "a/ b.md"
+        #EXCLUDED_FILES: "a/ b.md"
+    
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
+        publish_dir: ./akdb/doc/html
