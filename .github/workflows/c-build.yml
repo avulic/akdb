@@ -20,11 +20,11 @@ jobs:
       
     - name: compile doc 
       #uses: mattnotmitt/doxygen-action@v1
-      with:
+      #with:
         #doxyfile-path: './akdb/src/'
         #enable-latex: true
-        run: apt-get install build-essential make doxygen | make doc
-        working-directory: ./akdb/src
+      run: apt-get install build-essential make doxygen | make doc
+      working-directory: ./akdb/src
         
     - name: Push Wiki Changes
       uses: Andrew-Chen-Wang/github-wiki-action@v2
