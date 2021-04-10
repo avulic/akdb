@@ -19,8 +19,12 @@ jobs:
     #  working-directory: ./akdb/bin
       
     - name: compile doc 
-      run: make doc
-      working-directory: ./akdb/src
+      uses: mattnotmitt/doxygen-action@v1
+      with:
+        working-directory: ./akdb/src
+        doxyfile-path: ./akdb/doc
+        enable-latex: true
+        run: make doc
           
     - name: Push Wiki Changes
       uses: Andrew-Chen-Wang/github-wiki-action@v2
