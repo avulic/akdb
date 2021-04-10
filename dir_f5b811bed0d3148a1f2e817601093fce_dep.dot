@@ -1,0 +1,13 @@
+digraph "opti" {
+  bgcolor=transparent;
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  dir_f5b811bed0d3148a1f2e817601093fce [shape=box, label="opti", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_f5b811bed0d3148a1f2e817601093fce.html"];
+  dir_fb6598a949f0f53f82ac9a1a956124c7 [shape=box label="file" color="red" URL="dir_fb6598a949f0f53f82ac9a1a956124c7.html"];
+  dir_55aed34cd3f6ec638757940cb3108f99 [shape=box label="auxi" URL="dir_55aed34cd3f6ec638757940cb3108f99.html"];
+  dir_fb6598a949f0f53f82ac9a1a956124c7->dir_f5b811bed0d3148a1f2e817601093fce [headlabel="1", labeldistance=1.5 headhref="dir_000001_000005.html"];
+  dir_fb6598a949f0f53f82ac9a1a956124c7->dir_55aed34cd3f6ec638757940cb3108f99 [headlabel="19", labeldistance=1.5 headhref="dir_000001_000000.html"];
+  dir_f5b811bed0d3148a1f2e817601093fce->dir_fb6598a949f0f53f82ac9a1a956124c7 [headlabel="4", labeldistance=1.5 headhref="dir_000005_000001.html"];
+  dir_f5b811bed0d3148a1f2e817601093fce->dir_55aed34cd3f6ec638757940cb3108f99 [headlabel="9", labeldistance=1.5 headhref="dir_000005_000000.html"];
+}
