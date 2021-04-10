@@ -21,9 +21,9 @@ jobs:
     - name: compile doc 
       uses: mattnotmitt/doxygen-action@v1
       with:
-        doxyfile-path: 'src/doxygen.config'
+        doxyfile-path: 'akdb/src/doxygen.config'
         enable-latex: true
-        working-directory: './akdb/'
+        working-directory: '.'
         
     - name: Push Wiki Changes
       uses: Andrew-Chen-Wang/github-wiki-action@v2
