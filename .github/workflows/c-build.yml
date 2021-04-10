@@ -20,7 +20,7 @@ jobs:
       
       
     - name: instal dependencies
-      run: sudo apt-get install build-essential doxygen install texlive texlive-latex-extra -y
+      run: sudo apt-get install build-essential doxygen texlive texlive-latex-extra -y
       
     - name: make doc
       run: make doc
