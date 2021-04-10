@@ -21,8 +21,8 @@ jobs:
     - name: compile doc 
       uses: mattnotmitt/doxygen-action@v1
       with:
-        working-directory: ./akdb/
-        doxyfile-path: src/
+        working-directory: '.'
+        doxyfile-path: './akdb/src/'
         enable-latex: true
           
     - name: Push Wiki Changes
