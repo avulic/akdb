@@ -22,7 +22,7 @@ jobs:
       uses: mattnotmitt/doxygen-action@v1
       with:
         working-directory: ./akdb/doc
-        doxyfile-path: ./akdb/src
+        doxyfile-path: ../src
         enable-latex: true
           
     - name: Push Wiki Changes
