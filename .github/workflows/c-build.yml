@@ -20,7 +20,7 @@ jobs:
       
     - name: compile doc 
       run: make doc
-      working-directory: ./akdb/bin
+      working-directory: ./akdb/src
           
     - name: Push Wiki Changes
       uses: Andrew-Chen-Wang/github-wiki-action@v2
