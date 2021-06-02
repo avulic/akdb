@@ -39,6 +39,7 @@ jobs:
         git config --local user.name "github-actions[bot]"
         git add -f refman.pdf
         git commit -m "[AUTOMATIC COMMIT] Added pdf documentation file" -a
+        git push
       working-directory: ./akdb/doc
     
     
