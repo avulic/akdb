@@ -42,6 +42,11 @@ jobs:
         git push
       working-directory: ./akdb/doc
     
+   # - name: Push documentation to main
+   #   uses: ad-m/github-push-action@master
+   #   with:
+   #     github_token: ${{ secrets.GITHUB_TOKEN }}
+   #     branch: main
     
     #- name: Push Wiki Changes
     #  uses: Andrew-Chen-Wang/github-wiki-action@v2
