@@ -19,7 +19,7 @@ jobs:
     #  working-directory: ./akdb/bin
       
       
-    - name: Install dependencies
+    - name: Install doxygen dependencie
       run: sudo apt-get install build-essential doxygen texlive texlive-latex-extra -y
       
     - name: Make documentation
