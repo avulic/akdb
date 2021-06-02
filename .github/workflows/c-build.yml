@@ -10,7 +10,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: compile
+    - name: Compile
       run: make
       working-directory: ./akdb/src
       
@@ -19,12 +19,12 @@ jobs:
     #  working-directory: ./akdb/bin
       
       
-    - name: instal dependencies
+    - name: Install dependencies
       run: sudo apt-get install build-essential doxygen texlive texlive-latex-extra -y
       
-    - name: make doc
+    - name: Make documentation
       run: make doc
-      working-directory: './akdb/src'
+      working-directory: ./akdb/src
       
     #- name: compile doc 
     #  uses: mattnotmitt/doxygen-action@v1
@@ -32,20 +32,29 @@ jobs:
     #    doxyfile-path: 'akdb/src/doxygen.config'
     #    enable-latex: true
     #   working-directory: '.'
-        
-    - name: Push Wiki Changes
-      uses: Andrew-Chen-Wang/github-wiki-action@v2
-      env:
-        # Make sure you have that / at the end. We use rsync 
-        # WIKI_DIR's default is wiki/
-        WIKI_DIR: ./akdb/doc/html/
-        GH_TOKEN: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
-        GH_MAIL: ${{ secrets.YOUR_EMAIL }}
-        GH_NAME: ${{ github.repository_owner }}
-        #EXCLUDED_FILES: "a/ b.md"
     
-    - name: Deploy
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
-        publish_dir: ./akdb/doc/html
+    - name: Commit pdf file
+      run: |
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        git add refman.pdf
+        git commit -m "[AUTOMATIC COMMIT] Added pdf documentation file" -a
+      working-directory: ./akdb/doc
+    
+    
+    #- name: Push Wiki Changes
+    #  uses: Andrew-Chen-Wang/github-wiki-action@v2
+    #  env:
+    #    # Make sure you have that / at the end. We use rsync 
+    #    # WIKI_DIR's default is wiki/
+    #    WIKI_DIR: ./akdb/doc/html/
+    #    GH_TOKEN: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
+    #    GH_MAIL: ${{ secrets.YOUR_EMAIL }}
+    #    GH_NAME: ${{ github.repository_owner }}
+    #    #EXCLUDED_FILES: "a/ b.md"
+    
+    #- name: Deploy
+    #  uses: peaceiris/actions-gh-pages@v3
+    #  with:
+    #    github_token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
+    #    publish_dir: ./akdb/doc/html
