@@ -58,6 +58,23 @@ typedef struct {
 } AK_agg_input;
 
 /**
+  * @author Ena Dujak
+  * @struct rowroot_struct
+  * @brief Structure that defines a new row in table using list_node
+  */
+typedef struct{
+    struct list_node * row_root;
+} rowroot_struct;
+/**
+  * @author Ena Dujak
+  * @struct projection_att_struct
+  * @brief Structure that defines projection_att which is a new list_node
+  */
+typedef struct{
+    struct list_node * projection_att;
+} projection_att_struct;
+
+/**
  @author Dejan Frankovic
  @brief  Function that calculates how many attributes there are in the header with a while loop.
  @param  header A header array
